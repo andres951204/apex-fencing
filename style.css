@@ -1,0 +1,161 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .primary-btn {
+    @apply bg-[#EEE4DB] py-4 md:py-5 px-[30px] font-RivieraNightsBold text-melonseed text-base leading-[140%] h-[61px];
+  }
+
+  .secondary-btn {
+    @apply bg-[#252525] py-4 md:py-5 px-[42px] font-plusJarka font-medium text-white text-base leading-[140%];
+  }
+
+  .transparent-btn {
+    @apply bg-transparent py-4 md:py-5 px-[42px] font-RivieraNightsBold text-white text-base font-bold leading-[140%];
+  }
+
+  .main-headings {
+    @apply font-RivieraNightsMedium text-[30px] sm:text-[35px] text-[#2A2B2A] leading-[130%];
+  }
+
+  .our-product {
+    @apply absolute bottom-[22px] text-[20px] sm:text-[24px] font-RivieraNightsMedium leading-[120%] text-[#FCFCFA];
+  }
+
+  .advantage-section-heading {
+    @apply text-black font-RivieraNightsMedium leading-[120%] text-xl sm:text-2xl;
+  }
+
+  .advantage-section {
+    @apply font-plusJarka font-normal leading-[170%] text-sm text-black;
+  }
+
+  .real-experience {
+    @apply text-black font-normal font-RivieraNightsRegular text-lg md:text-3xl leading-[150%] max-w-[469px];
+  }
+
+  .showcase-tags {
+    @apply absolute bottom-6 left-4 text-white font-plusJarka font-medium leading-[120%] text-sm;
+  }
+
+  .blog-title {
+    @apply text-black font-RivieraNightsMedium leading-[120%] text-base lg:text-[24px] font-medium;
+  }
+
+  .footer-links {
+    @apply text-sm font-normal font-plusJarka leading-[170%] space-y-2 flex flex-col;
+  }
+}
+
+@font-face {
+  font-family: RivieraNightsTrialblack;
+  src: url("/fonts/RivieraNightsTrial-Black.otf");
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: RivieraNightsTrialBold;
+  src: url("/fonts/RivieraNightsTrial-Bold.otf");
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: RivieraNightsTrialLight;
+  src: url("/fonts/RivieraNightsTrial-Ultralight.otf");
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: RivieraNightsTrialMedium;
+  src: url("/fonts/RivieraNightsTrial-Medium.otf");
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: RivieraNightsTrialRegular;
+  src: url("/fonts/RivieraNightsTrial-Regular.otf");
+  font-display: swap;
+  font-style: normal;
+}
+
+.Hero-bg::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background-size: cover;
+  background-image: url("/images/hero-bg-image.webp");
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* SIDEBAR STYLE  */
+#sidebar {
+  position: fixed;
+  left: -300px;
+  width: 280px;
+  height: 100vh;
+  top: 0px;
+  background-color: black;
+  overflow-y: auto;
+  transition: all ease-in-out 0.4s;
+}
+
+.translate-x-full#sidebar {
+  left: 0px;
+}
+
+/* SWIPER STYLE  */
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-button-prev:after {
+  opacity: 0;
+  width: 0;
+}
+
+.swiper-button-next:after {
+  width: 0;
+  opacity: 0;
+}
+
+@media (min-width: 769px) {
+  .swiper-slide:first-child {
+    transition: transform 100ms;
+  }
+
+  .swiper-slide.swiper-slide-active:first-child {
+    transform: translateX(0%);
+    z-index: 2;
+  }
+
+  .swiper-slide:nth-child(2) {
+    transition: transform 100ms;
+  }
+
+  .swiper-slide.swiper-slide-next:nth-child(2) {
+    transform: translateX(0%);
+    z-index: 1;
+  }
+
+  .swiper[dir="rtl"] .swiper-slide.swiper-slide-active:first-child {
+    transform: translateX(-50%);
+  }
+
+  .swiper[dir="rtl"] .swiper-slide.swiper-slide-next:nth-child(2) {
+    transform: translateX(-55%);
+  }
+}
