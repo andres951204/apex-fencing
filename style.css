@@ -6,52 +6,90 @@
 
 @layer base {
   .primary-btn {
-    @apply bg-[#EEE4DB] py-4 md:py-5 px-[30px] font-RivieraNightsBold text-melonseed text-base leading-[140%] h-[61px];
+    @apply h-[61px] bg-kl-greige px-[30px] py-4 font-riviera-bold text-base leading-[140%] text-kl-melon-seed md:py-5;
   }
 
   .secondary-btn {
-    @apply bg-[#252525] py-4 md:py-5 px-[42px] font-plusJarka font-medium text-white text-base leading-[140%];
+    @apply bg-kl-black px-[42px] py-4 font-jakarta text-base font-medium leading-[140%] text-white md:py-5;
   }
 
   .transparent-btn {
-    @apply bg-transparent py-4 md:py-5 px-[42px] font-RivieraNightsBold text-white text-base font-bold leading-[140%];
+    @apply bg-transparent px-[42px] py-4 font-riviera-bold text-base font-bold leading-[140%] text-white md:py-5;
+  }
+
+  .default-transition {
+    @apply transition-all duration-500 ease-in-out;
   }
 
   .main-headings {
-    @apply font-RivieraNightsMedium text-[30px] sm:text-[35px] text-[#2A2B2A] leading-[130%];
+    @apply font-riviera-medium text-[30px] leading-[130%] text-[#2A2B2A] sm:text-[35px];
   }
 
   .our-product {
-    @apply absolute bottom-[22px] text-[20px] sm:text-[24px] font-RivieraNightsMedium leading-[120%] text-[#FCFCFA];
+    @apply absolute bottom-[22px] font-riviera-medium text-[20px] leading-[120%] text-[#FCFCFA] sm:text-[24px];
   }
 
   .advantage-section-heading {
-    @apply text-black font-RivieraNightsMedium leading-[120%] text-xl sm:text-2xl;
+    @apply font-riviera-medium text-xl leading-[120%] text-black sm:text-2xl;
   }
 
   .advantage-section {
-    @apply font-plusJarka font-normal leading-[170%] text-sm text-black;
+    @apply font-jakarta text-sm font-normal leading-[170%] text-black;
   }
 
   .real-experience {
-    @apply text-black font-normal font-RivieraNightsRegular text-lg md:text-3xl leading-[150%] max-w-[469px];
+    @apply max-w-[469px] font-riviera-regular text-lg font-normal leading-[150%] text-black md:text-3xl;
   }
 
   .showcase-tags {
-    @apply absolute bottom-6 left-4 text-white font-plusJarka font-medium leading-[120%] text-sm;
+    @apply absolute bottom-6 left-4 font-jakarta text-sm font-medium leading-[120%] text-white;
   }
 
   .blog-title {
-    @apply text-black font-RivieraNightsMedium leading-[120%] text-base lg:text-[24px] font-medium;
+    @apply font-riviera-medium text-base font-medium leading-[120%] text-black lg:text-[24px];
   }
 
   .footer-links {
-    @apply text-sm font-normal font-plusJarka leading-[170%] space-y-2 flex flex-col;
+    @apply flex flex-col space-y-2 font-jakarta text-sm font-normal leading-[170%];
+  }
+}
+
+@layer productCard {
+  .product-card {
+    @apply relative w-[95%] max-w-default lg:h-[660px] lg:p-0 lg:px-2 xl:w-[100%];
+  }
+
+  .left-image {
+    @apply -z-10 lg:absolute lg:left-0 lg:w-[74%];
+  }
+
+  .right-container {
+    @apply relative bottom-0 right-0 z-10 max-h-[620px] bg-kl-greige p-10 lg:absolute lg:w-[560px] lg:px-16 lg:pt-[74px];
+  }
+
+  .stripe-purple {
+    @apply before:absolute before:bottom-0 before:left-0 before:h-2 before:w-full before:bg-kl-purple;
+  }
+
+  .stripe-olive {
+    @apply before:absolute before:bottom-0 before:left-0 before:h-2 before:w-full before:bg-kl-olive;
+  }
+
+  .stripe-copper {
+    @apply before:absolute before:bottom-0 before:left-0 before:h-2 before:w-full before:bg-kl-cooper;
+  }
+
+  .thumbnail {
+    @apply h-12 w-12 rounded-full;
+  }
+
+  .thumbnail-outline {
+    @apply h-12 w-12 rounded-full outline outline-[0.75px];
   }
 }
 
 @font-face {
-  font-family: RivieraNightsTrialblack;
+  font-family: RivieraNightsTrialBlack;
   src: url("/fonts/RivieraNightsTrial-Black.otf");
   font-display: swap;
   font-style: normal;

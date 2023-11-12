@@ -1,20 +1,37 @@
 /** @type {import('tailwindcss').Config} */
+
 export default {
-  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  content: ["./*.html"],
   theme: {
     extend: {
       fontFamily: {
-        RivieraNightsTrialExtraLight: ["RivieraNightsTrialExtraLight"],
-        RivieraNightsBlack: [" RivieraNightsTrialblack"],
-        RivieraNightsBold: ["RivieraNightsTrialBold"],
-        RivieraNightsLight: ["RivieraNightsTrialLight "],
-        RivieraNightsMedium: ["RivieraNightsTrialMedium"],
-        RivieraNightsRegular: ["RivieraNightsTrialRegular"],
-        plusJarka: ["Plus Jakarta Sans", "sans-serif"],
+        "riviera-extra-light": ["RivieraNightsTrialExtraLight"],
+        "riviera-black": [" RivieraNightsTrialBlack"],
+        "riviera-bold": ["RivieraNightsTrialBold"],
+        "riviera-light": ["RivieraNightsTrialLight "],
+        "riviera-medium": ["RivieraNightsTrialMedium"],
+        "riviera-regular": ["RivieraNightsTrialRegular"],
+        jakarta: ["Plus Jakarta Sans", "sans-serif"],
       },
       colors: {
-        melonseed: "#32281f",
-        darkGray: "#a8a9ad4d",
+        kl: {
+          greige: "#EEE4DB",
+          purple: "#695978",
+          cooper: "#AA6627",
+          olive: "#5A623D",
+          silver: "#E5E5E6",
+          black: "#252525",
+          white: "#FCFCFA",
+          "melon-seed": "#32281F",
+        },
+        texture: {
+          black: "#282828",
+          bronze: "#978D8D",
+          white: "#FFF",
+          "matte-black": "#2D2D2D",
+          "oil-rubbed-bronze": "#978D8D",
+          "matte-white": "#FFF",
+        },
       },
       screens: {
         xs: "340px",
@@ -34,6 +51,14 @@ export default {
 
         "2xl": "1536px",
         // => @media (min-width: 1536px) { ... }
+      },
+      backgroundImage: {
+        "hero-horizontal-cable-railings":
+          "url('/images/HeroHorizontalCableRailing.webp')",
+        "hero-home": "url('/images/hero-bg-image.webp')",
+      },
+      maxWidth: {
+        default: "1180px",
       },
     },
   },
