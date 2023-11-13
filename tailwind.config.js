@@ -32,6 +32,17 @@ export default {
           "oil-rubbed-bronze": "#978D8D",
           "matte-white": "#FFF",
         },
+        custom: {
+          bronze: "#544838",
+          "gloss-black": "#201D1D",
+          beige: "#CABC9C",
+          brownstone: "#A49376",
+          walnut: "#2F1F18",
+          redwood: "#5A2A24",
+          "hunter-green": "#1A3329",
+          silver: "#A8A9AD",
+          kona: "#413329",
+        },
       },
       screens: {
         xs: "340px",
@@ -59,6 +70,7 @@ export default {
       },
       maxWidth: {
         default: "1180px",
+        wide: "1440px",
       },
     },
   },

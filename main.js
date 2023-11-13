@@ -7,7 +7,6 @@ import "swiper/css/pagination";
 // SWIPER
 new Swiper(".reviews-swiper", {
   slidesPerView: 1,
-  slidesPerView: 1,
   centeredSlides: false,
   grabCursor: true,
   keyboard: {
@@ -27,6 +26,27 @@ new Swiper(".reviews-swiper", {
   // pagination: {
   //   el: ".swiper-pagination",
   // },
+});
+
+// SWIPER
+new Swiper(".product-detail-swiper", {
+  slidesPerView: 1,
+  centeredSlides: false,
+  grabCursor: true,
+  keyboard: {
+    enabled: true,
+  },
+  breakpoints: {
+    769: {
+      slidesPerView: 2.3,
+      slidesPerGroup: 2,
+    },
+  },
+  modules: [Navigation, Pagination],
+  navigation: {
+    nextEl: ".swiper-product-detail-button-next",
+    prevEl: ".swiper-product-detail-button-prev",
+  },
 });
 
 // HEADER SEARCH BAR
@@ -55,17 +75,19 @@ crossIcon.addEventListener("click", () => {
 // SIDEBAR
 const toggleSidebarButton = document.getElementById("toggleSidebar");
 const sidebar = document.getElementById("sidebar");
+const sidebarOverlay = document.getElementById("sidebar-overlay");
 const crossIconsidebar = document.getElementById("crossIcon-sidebar");
 
-toggleSidebarButton.addEventListener("click", () => {
+const toggleSideBar = () => {
   sidebar.classList.toggle("translate-x-full");
+  sidebarOverlay.classList.toggle("invisible");
+  sidebarOverlay.classList.toggle("opacity-0");
   document.body.classList.toggle("overflow-hidden");
-});
+};
 
-crossIconsidebar.addEventListener("click", () => {
-  sidebar.classList.toggle("translate-x-full");
-  document.body.classList.toggle("overflow-hidden");
-});
+toggleSidebarButton.addEventListener("click", toggleSideBar);
+
+crossIconsidebar.addEventListener("click", toggleSideBar);
 
 // BACK TO TOP BUTTON
 const backToTopButton = document.getElementById("back-to-top");

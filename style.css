@@ -21,6 +21,14 @@
     @apply transition-all duration-500 ease-in-out;
   }
 
+  .section-heading {
+    @apply mt-3 font-riviera-medium text-5xl leading-[120%];
+  }
+
+  .section-description {
+    @apply mt-8 font-jakarta text-base;
+  }
+
   .main-headings {
     @apply font-riviera-medium text-[30px] leading-[130%] text-[#2A2B2A] sm:text-[35px];
   }
@@ -168,6 +176,10 @@
 .swiper-button-next:after {
   width: 0;
   opacity: 0;
+}
+
+.swiper-button-disabled {
+  background-color: lightgray;
 }
 
 @media (min-width: 769px) {
