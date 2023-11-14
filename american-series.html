@@ -392,7 +392,7 @@
 
                 <button
                   aria-label="Where to Buy"
-                  class="primary-btn border-cream hover:text-cream border transition-all duration-700 ease-in-out hover:border hover:border-kl-black hover:bg-transparent"
+                  class="primary-btn border-cream hover:text-cream border transition-all duration-300 ease-in-out hover:border hover:border-kl-black hover:bg-transparent"
                 >
                   Where to Buy
                 </button>
@@ -402,7 +402,7 @@
                 <div class="flex items-center gap-8">
                   <button
                     aria-label="Where to Buy"
-                    class="primary-btn border-cream hover:text-cream hidden border transition-all duration-700 ease-in-out hover:bg-transparent hover:text-kl-greige sm:block"
+                    class="primary-btn border-cream hover:text-cream hidden border transition-all duration-300 ease-in-out hover:bg-transparent hover:text-kl-greige sm:block"
                   >
                     Where to Buy
                   </button>
@@ -416,7 +416,7 @@
                     >
                       <path
                         d="M5 17H19M5 12H19M5 7H19"
-                        stroke="white"
+                        stroke="black"
                         stroke-width="2"
                         stroke-linecap="round"
                         stroke-linejoin="round"
@@ -432,27 +432,49 @@
     </header>
 
     <!-- PRODUCT -->
-    <section class="mx-auto mt-6 flex max-w-default gap-x-16">
-      <div class="flex w-1/2 flex-col justify-between">
-        <div
-          class="h-[500px] w-full bg-[url('/images/AmericanSeries.webp')] bg-cover bg-center"
-        ></div>
+    <section
+      id="Product"
+      class="mx-auto flex max-w-[90%] flex-col items-center gap-x-16 pt-6 lg:max-w-default lg:flex-row"
+      x-data="{image:'/images/AmericanSeries.webp'}"
+    >
+      <div class="flex w-full flex-col justify-between lg:w-1/2">
+        <img x-bind:src="image" class="h-[500px] w-full object-cover" alt="" />
         <div class="flex gap-x-3 pt-2">
-          <a href="./images/Thumbnail1.webp" class="glightbox">
-            <img src="./images/Thumbnail1.webp" alt="Thumbnail-1" width="108" />
-          </a>
-          <a href="./images/Thumbnail2.webp" class="glightbox">
-            <img src="./images/Thumbnail2.webp" alt="Thumbnail-2" width="108" />
-          </a>
-          <a href="./images/Thumbnail3.webp" class="glightbox">
-            <img src="./images/Thumbnail3.webp" alt="Thumbnail-3" width="108" />
-          </a>
-          <a href="./images/Thumbnail4.webp" class="glightbox">
-            <img src="./images/Thumbnail4.webp" alt="Thumbnail-4" width="108" />
-          </a>
+          <img
+            class="cursor-pointer"
+            src="./images/AmericanSeries.webp"
+            @click="image = './images/AmericanSeries.webp'"
+            alt="American series"
+            name="productSlide"
+            width="108"
+          />
+          <img
+            class="cursor-pointer"
+            src="./images/TheRailingOfYourDreams2.webp"
+            @click="image = './images/TheRailingOfYourDreams2.webp'"
+            alt="Thumbnail-1"
+            name="productSlide"
+            width="108"
+          />
+          <img
+            class="cursor-pointer"
+            src="./images/TheRailingOfYourDreams.webp"
+            @click="image = './images/TheRailingOfYourDreams.webp'"
+            alt="Thumbnail-4"
+            name="productSlide"
+            width="108"
+          />
+          <img
+            class="cursor-pointer"
+            src="./images/Thumbnail2.webp"
+            @click="image = './images/Thumbnail2.webp'"
+            alt="Thumbnail-2"
+            name="productSlide"
+            width="108"
+          />
         </div>
       </div>
-      <div class="mt-3 w-1/2">
+      <div class="mt-3 lg:w-1/2">
         <h2 class="font-riviera-medium text-lg text-kl-cooper">
           Horizontal Cable Railing
         </h2>
@@ -467,8 +489,16 @@
           their unobstructed views.
         </p>
         <div class="mt-8 flex gap-x-8">
-          <button class="secondary-btn">See Our Product Resources</button>
-          <button class="transparent-btn border border-kl-black text-kl-black">
+          <button
+            aria-label="See our product resources"
+            class="secondary-btn border border-kl-black transition-all duration-500 ease-in-out hover:bg-transparent hover:text-black"
+          >
+            See Our Product Resources
+          </button>
+          <button
+            aria-label="See product faqs"
+            class="transparent-btn w-full border border-kl-black text-black transition-all duration-300 ease-in-out hover:border-transparent hover:bg-kl-greige sm:w-fit"
+          >
             See Product FAQs
           </button>
         </div>
@@ -520,29 +550,38 @@
     <!-- PRODUCT NAVIGATION -->
     <section
       role="secondary-navigation"
-      class="mt-24 h-16 w-full bg-kl-greige outline outline-1"
+      id="productNavigation"
+      class="z-10 mt-24 flex min-h-[64px] w-full items-center bg-kl-greige outline outline-1"
     >
       <div
-        class="mx-auto flex h-full max-w-default items-center gap-28 font-riviera-medium text-lg"
+        class="mx-auto flex max-w-default items-center gap-28 px-3 font-riviera-medium text-lg"
       >
         <a
-          href="#"
-          class="relative before:absolute before:-right-12 before:top-1/2 before:h-10 before:w-[1px] before:-translate-y-1/2 before:bg-black"
+          href="#Product"
+          aria-label="Product section"
+          class="relative leading-5 before:absolute before:-right-12 before:top-1/2 before:h-10 before:w-[1px] before:-translate-y-1/2 before:bg-black"
           >AS | Horizontal Cable Railing</a
         >
-        <div class="flex gap-12">
-          <a href="#" aria-label="product details">Details</a>
-          <a href="#" aria-label="product specifications">Specifications</a>
-          <a href="#" aria-label="product accessories">Accessories</a>
-          <a href="#" aria-label="product colors">Colors</a>
-          <a href="#" aria-label="product lighting">Lighting</a>
-          <a href="#" aria-label="product resources">Resources</a>
+        <div class="flex flex-wrap gap-x-12">
+          <a href="#Details" aria-label="Product details">Details</a>
+          <a href="#Specifications" aria-label="Product specifications"
+            >Specifications</a
+          >
+          <a href="#Accessories" aria-label="Product accessories"
+            >Accessories</a
+          >
+          <a href="#Colors" aria-label="Product colors">Colors</a>
+          <a href="#Lighting" aria-label="Product lighting">Lighting</a>
+          <a href="#Resources" aria-label="Product resources">Resources</a>
         </div>
       </div>
     </section>
 
     <!-- RAILING OF YOUR DREAMS -->
-    <section class="mx-auto mt-20 flex flex-col">
+    <section
+      id="Details"
+      class="mx-auto flex max-w-[90%] flex-col pt-20 lg:max-w-full"
+    >
       <div class="mx-auto flex w-full max-w-default flex-col items-start">
         <h3 class="section-heading">The Railing of Your Dreams</h3>
         <div class="flex w-full justify-between">
@@ -554,6 +593,7 @@
           </p>
           <div class="flex items-end gap-5">
             <button
+              aria-label="prev railing slide"
               class="swiper-product-detail-button-prev flex h-[50px] min-h-[50px] w-[50px] min-w-[50px] items-center justify-center rounded-full bg-kl-black"
             >
               <svg
@@ -579,6 +619,7 @@
               </svg>
             </button>
             <button
+              aria-label="next railing slide"
               class="swiper-product-detail-button-next flex h-[50px] min-h-[50px] w-[50px] min-w-[50px] items-center justify-center rounded-full bg-kl-black"
             >
               <svg
@@ -612,7 +653,7 @@
             <div class="grid grid-cols-3 gap-4">
               <a
                 href="/images/Nextstep.webp"
-                class="glightbox col-span-2 h-[600px] w-full"
+                class="glightbox col-span-2 h-[350px] w-full lg:h-[600px]"
               >
                 <div
                   class="h-full w-full bg-[url('/images/Nextstep.webp')] bg-cover bg-no-repeat"
@@ -642,7 +683,7 @@
             <div class="grid grid-cols-3 gap-4">
               <a
                 href="/images/Nextstep.webp"
-                class="glightbox col-span-2 h-[600px] w-full"
+                class="glightbox col-span-2 h-[350px] w-full lg:h-[600px]"
               >
                 <div
                   class="h-full w-full bg-[url('/images/Nextstep.webp')] bg-cover bg-no-repeat"
@@ -672,7 +713,7 @@
             <div class="grid grid-cols-3 gap-4">
               <a
                 href="/images/Nextstep.webp"
-                class="glightbox col-span-2 h-[600px] w-full"
+                class="glightbox col-span-2 h-[350px] w-full lg:h-[600px]"
               >
                 <div
                   class="h-full w-full bg-[url('/images/Nextstep.webp')] bg-cover bg-no-repeat"
@@ -704,9 +745,10 @@
 
     <!-- SPECIFICATIONS -->
     <section
-      class="relative mx-auto mt-28 flex max-w-default justify-between before:absolute before:-bottom-24 before:h-[0.7px] before:w-full before:bg-kl-cooper"
+      id="Specifications"
+      class="relative mx-auto flex max-w-[90%] flex-col-reverse justify-between pt-28 before:absolute before:-bottom-24 before:h-[0.7px] before:w-full before:bg-kl-cooper lg:max-w-default lg:flex-row"
     >
-      <div class="flex w-1/2 flex-col">
+      <div class="flex flex-col lg:w-1/2">
         <h3 class="section-heading text-2xl">Specifications and Options</h3>
         <p class="section-description text-lg">
           Height Options: 36″ | 42″ <br />
@@ -718,14 +760,14 @@
           4″ x 38″ | 48″ | 78″*<br />
         </p>
       </div>
-      <div class="w-1/2">
+      <div class="flex justify-center lg:w-1/2">
         <img src="/images/Specifications.webp" alt="" />
       </div>
     </section>
 
     <!-- WHAT MAKES UP YOUR RAILING -->
     <section
-      class="relative mx-auto mt-44 flex w-full max-w-default flex-col before:absolute before:-bottom-24 before:h-[0.7px] before:w-full before:bg-kl-cooper"
+      class="relative mx-auto mt-44 flex w-full max-w-[90%] flex-col before:absolute before:-bottom-24 before:h-[0.7px] before:w-full before:bg-kl-cooper lg:max-w-default"
     >
       <h3 class="section-heading">What makes up your railing?</h3>
       <p class="section-description max-w-[840px] text-lg">
@@ -733,7 +775,7 @@
         flat top rail for a modern touch, horizontal cable infill for an open
         view, and robust aluminum posts for stability and longevity.
       </p>
-      <div class="mt-11 flex justify-between">
+      <div class="mt-11 flex flex-wrap justify-between">
         <div class="flex flex-col">
           <img src="/images/TopRail.webp" alt="Top rail" width="377" />
           <p class="mt-8 font-riviera-medium text-2xl">Top Rail</p>
@@ -750,10 +792,13 @@
     </section>
 
     <!-- ACCESSORIES -->
-    <section class="mx-auto mt-44 w-full max-w-default">
+    <section
+      class="mx-auto w-full max-w-[90%] pt-44 lg:max-w-default"
+      id="Accessories"
+    >
       <h3 class="section-heading">Accessories</h3>
       <h4 class="mt-20 font-riviera-medium text-2xl">Post Caps And Trim</h4>
-      <div class="mt-10 flex gap-5">
+      <div class="mt-10 flex flex-wrap gap-5">
         <div class="flex flex-col">
           <img src="/images/PostCap.webp" alt="Post cap" width="180" />
           <p class="mt-8 font-riviera-medium text-lg">Post cap</p>
@@ -814,11 +859,14 @@
     </section>
 
     <!-- CUSTOM COLORS -->
-    <section class="mt-40 flex w-full gap-20">
+    <section
+      id="Colors"
+      class="mx-auto flex w-full max-w-[90%] flex-col gap-20 pt-40 lg:max-w-full lg:flex-row"
+    >
       <div
-        class="h-[526px] w-1/2 bg-[url('/images/TheRailingOfYourDreams.webp')] bg-cover"
+        class="h-[350px] bg-[url('/images/TheRailingOfYourDreams.webp')] bg-cover lg:h-[526px] lg:w-1/2"
       ></div>
-      <div class="w-1/2 max-w-[560px]">
+      <div class="flex flex-col lg:w-1/2 lg:max-w-[560px]">
         <h3 class="section-heading">Custom Colors</h3>
         <p class="section-description text-lg">
           Any colors you need with our in-house custom powder coating
@@ -870,9 +918,10 @@
             </div>
           </div>
         </div>
-        <div class="mt-6 flex w-full items-center justify-between">
+        <div class="mt-6 flex w-full flex-wrap items-center justify-between">
           <button
-            class="transparent-btn text-base text-kl-black outline outline-1"
+            aria-label="Learn About Our Coastal Upgrade"
+            class="transparent-btn w-full border border-kl-black text-black transition-all duration-300 ease-in-out hover:border-transparent hover:bg-kl-greige sm:w-fit"
           >
             Learn About Our Coastal Upgrade
           </button>
@@ -887,10 +936,13 @@
     </section>
 
     <!-- LIGHTNING SECTION -->
-    <section>
-      <div class="max-w-de mt-52 flex w-full flex-col">
-        <div class="flex justify-between gap-32" id="lighting-container">
-          <div class="mt-20 w-full max-w-[550px]">
+    <section class="mx-auto max-w-[90%] lg:max-w-full" id="Lighting">
+      <div class="max-w-de flex w-full flex-col pt-52">
+        <div
+          class="flex flex-col-reverse justify-between lg:flex-row lg:gap-32"
+          id="lighting-container"
+        >
+          <div class="mt-20 w-full lg:max-w-[550px]">
             <h3 class="section-heading">
               Need lighting? <br />
               We’ve got you covered
@@ -901,23 +953,26 @@
               pair with railing for a beautiful, seamless look.
             </p>
 
-            <div class="mt-20 flex w-full items-center justify-between">
+            <div
+              class="mt-10 flex w-full items-center justify-between lg:mt-20"
+            >
               <button
-                class="transparent-btn text-base text-kl-black outline outline-1"
+                aria-label="See All Lighting Options"
+                class="transparent-btn w-full border border-kl-black text-black transition-all duration-300 ease-in-out hover:border-transparent hover:bg-kl-greige sm:w-fit"
               >
                 See All Lighting Options
               </button>
             </div>
           </div>
           <div
-            class="h-[526px] w-full bg-[url('/images/LightingSection.webp')] bg-cover bg-no-repeat"
+            class="h-[350px] w-full bg-[url('/images/LightingSection.webp')] bg-cover bg-no-repeat lg:h-[526px]"
           ></div>
         </div>
         <div
           id="lighting-options"
-          class="mx-auto mt-10 flex w-full max-w-default gap-5"
+          class="mx-auto mt-10 flex w-full max-w-default flex-wrap gap-5"
         >
-          <div class="flex flex-col">
+          <div class="flex max-w-[180px] flex-col">
             <img
               src="/images/PostCapLightPyramid.webp"
               alt="Post Cap Light Pyramid"
@@ -927,7 +982,7 @@
               Post Cap Light Pyramid
             </p>
           </div>
-          <div class="flex flex-col">
+          <div class="flex max-w-[180px] flex-col">
             <img
               src="/images/PostCapLightDecorative.webp"
               alt="Post Cap Light Decorative"
@@ -937,7 +992,7 @@
               Post Cap Light Decorative
             </p>
           </div>
-          <div class="flex flex-col">
+          <div class="flex max-w-[180px] flex-col">
             <img
               src="/images/PostCapDownlightPyramid.webp"
               alt="Post Cap Downlight Pyramid"
@@ -947,7 +1002,7 @@
               Post Cap Downlight Pyramid
             </p>
           </div>
-          <div class="flex flex-col">
+          <div class="flex max-w-[180px] flex-col">
             <img
               src="/images/PostCapDownlightDecorative.webp"
               alt="Post Cap Downlight Decorative"
@@ -957,7 +1012,7 @@
               Post Cap Downlight Decorative
             </p>
           </div>
-          <div class="flex flex-col">
+          <div class="flex max-w-[180px] flex-col">
             <img
               src="/images/PostStairAccentLight.webp"
               alt="Post & Stair Accent Light"
@@ -968,7 +1023,7 @@
               Accent Light
             </p>
           </div>
-          <div class="flex flex-col">
+          <div class="flex max-w-[180px] flex-col">
             <img
               src="/images/PostStairAccentLightWhite.webp"
               alt="Post & Stair Accent Light"
@@ -1002,7 +1057,7 @@
           </p>
           <button
             aria-label="Locate a Dealer"
-            class="borderkl-greige mt-2 border bg-transparent px-8 py-4 font-jakarta text-base text-white transition-all duration-700 ease-in-out hover:bg-kl-greige hover:text-black sm:mt-6 md:py-4"
+            class="borderkl-greige mt-2 border bg-transparent px-8 py-4 font-jakarta text-base text-white transition-all duration-300 ease-in-out hover:bg-kl-greige hover:text-black sm:mt-6 md:py-4"
           >
             Locate a Dealer
           </button>
@@ -1104,7 +1159,703 @@
       </div>
     </section>
 
-    <section class="mt-60"></section>
+    <!-- TECHNICAL RESOURCES -->
+    <section
+      class="mx-auto max-w-[90%] pt-10 lg:max-w-default lg:pt-60"
+      id="Resources"
+    >
+      <h3 class="section-heading text-center">Technical Resources</h3>
+      <div class="mt-20 flex flex-col gap-1" x-data="{accordionTab:0}">
+        <div role="tab">
+          <button
+            aria-label="Installation videos"
+            class="flex h-16 w-full items-center justify-between bg-kl-greige p-7 font-riviera-medium text-xl"
+            @click="accordionTab !== 1 ? accordionTab = 1 : accordionTab = null"
+          >
+            <div>Installation videos</div>
+            <div>
+              <svg
+                width="19"
+                height="10"
+                class="transition-all duration-500 ease-in-out"
+                x-bind:class="accordionTab === 1 ? 'rotate-180' : '' "
+                viewBox="0 0 19 10"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M0.483398 1L9.2834 9L18.0834 1"
+                  stroke="#252525"
+                  stroke-width="1.33"
+                />
+              </svg>
+            </div>
+          </button>
+          <div
+            x-ref="containerVideos"
+            x-bind:style="accordionTab == 1 ? 'max-height: ' + $refs.containerVideos.scrollHeight + 'px' : ''"
+            class="max-h-0 overflow-hidden bg-kl-white transition-all duration-500 ease-in-out"
+          >
+            <div class="flex justify-center gap-5 py-20">
+              <a
+                href="/videos/pexels-mikhail-nilov-7989667(1080p).mp4"
+                class="glightbox"
+              >
+                <img src="/images/InstallationVideo1.webp" alt="" width="347" />
+              </a>
+              <a
+                href="/videos/pexels-mikhail-nilov-7989667(1080p).mp4"
+                class="glightbox"
+              >
+                <img src="/images/InstallationVideo2.webp" alt="" width="347" />
+              </a>
+              <a
+                href="/videos/pexels-mikhail-nilov-7989667(1080p).mp4"
+                class="glightbox"
+              >
+                <img src="/images/InstallationVideo3.webp" alt="" width="347" />
+              </a>
+            </div>
+          </div>
+        </div>
+        <div role="tab">
+          <button
+            aria-label="Installation guides"
+            class="flex h-16 w-full items-center justify-between bg-kl-greige p-7 font-riviera-medium text-xl"
+            @click="accordionTab !== 2 ? accordionTab = 2 : accordionTab = null"
+          >
+            <div>Installation guides</div>
+            <div>
+              <svg
+                width="19"
+                height="10"
+                class="transition-all duration-500 ease-in-out"
+                x-bind:class="accordionTab === 2 ? 'rotate-180' : '' "
+                viewBox="0 0 19 10"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M0.483398 1L9.2834 9L18.0834 1"
+                  stroke="#252525"
+                  stroke-width="1.33"
+                />
+              </svg>
+            </div>
+          </button>
+          <div
+            x-ref="containerGuides"
+            x-bind:style="accordionTab == 2 ? 'max-height: ' + $refs.containerGuides.scrollHeight + 'px' : ''"
+            class="max-h-0 overflow-hidden bg-kl-white transition-all duration-500 ease-in-out"
+          >
+            <div class="flex justify-center gap-5 py-20">
+              <a
+                href="/videos/pexels-mikhail-nilov-7989667(1080p).mp4"
+                class="glightbox"
+              >
+                <img src="/images/InstallationVideo1.webp" alt="" width="347" />
+              </a>
+              <a
+                href="/videos/pexels-mikhail-nilov-7989667(1080p).mp4"
+                class="glightbox"
+              >
+                <img src="/images/InstallationVideo2.webp" alt="" width="347" />
+              </a>
+              <a
+                href="/videos/pexels-mikhail-nilov-7989667(1080p).mp4"
+                class="glightbox"
+              >
+                <img src="/images/InstallationVideo3.webp" alt="" width="347" />
+              </a>
+            </div>
+          </div>
+        </div>
+        <div role="tab">
+          <button
+            aria-label="Arcat"
+            class="flex h-16 w-full items-center justify-between bg-kl-greige p-7 font-riviera-medium text-xl"
+            @click="accordionTab !== 3 ? accordionTab = 3 : accordionTab = null"
+          >
+            <div>Arcat</div>
+            <div>
+              <svg
+                width="19"
+                height="10"
+                class="transition-all duration-500 ease-in-out"
+                x-bind:class="accordionTab === 3 ? 'rotate-180' : '' "
+                viewBox="0 0 19 10"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M0.483398 1L9.2834 9L18.0834 1"
+                  stroke="#252525"
+                  stroke-width="1.33"
+                />
+              </svg>
+            </div>
+          </button>
+          <div
+            x-ref="containerArcat"
+            x-bind:style="accordionTab == 3 ? 'max-height: ' + $refs.containerArcat.scrollHeight + 'px' : ''"
+            class="max-h-0 overflow-hidden bg-kl-white transition-all duration-500 ease-in-out"
+          >
+            <div class="flex justify-center gap-5 py-20">
+              <a
+                href="/videos/pexels-mikhail-nilov-7989667(1080p).mp4"
+                class="glightbox"
+              >
+                <img src="/images/InstallationVideo1.webp" alt="" width="347" />
+              </a>
+              <a
+                href="/videos/pexels-mikhail-nilov-7989667(1080p).mp4"
+                class="glightbox"
+              >
+                <img src="/images/InstallationVideo2.webp" alt="" width="347" />
+              </a>
+              <a
+                href="/videos/pexels-mikhail-nilov-7989667(1080p).mp4"
+                class="glightbox"
+              >
+                <img src="/images/InstallationVideo3.webp" alt="" width="347" />
+              </a>
+            </div>
+          </div>
+        </div>
+        <div role="tab">
+          <button
+            aria-label="Brochures"
+            class="flex h-16 w-full items-center justify-between bg-kl-greige p-7 font-riviera-medium text-xl"
+            @click="accordionTab !== 4 ? accordionTab = 4 : accordionTab = null"
+          >
+            <div>Brochures</div>
+            <div>
+              <svg
+                width="19"
+                height="10"
+                class="transition-all duration-500 ease-in-out"
+                x-bind:class="accordionTab === 4 ? 'rotate-180' : '' "
+                viewBox="0 0 19 10"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M0.483398 1L9.2834 9L18.0834 1"
+                  stroke="#252525"
+                  stroke-width="1.33"
+                />
+              </svg>
+            </div>
+          </button>
+          <div
+            x-ref="containerBrochure"
+            x-bind:style="accordionTab == 4 ? 'max-height: ' + $refs.containerBrochure.scrollHeight + 'px' : ''"
+            class="max-h-0 overflow-hidden bg-kl-white transition-all duration-500 ease-in-out"
+          >
+            <div class="flex justify-center gap-5 py-20">
+              <a
+                href="/videos/pexels-mikhail-nilov-7989667(1080p).mp4"
+                class="glightbox"
+              >
+                <img src="/images/InstallationVideo1.webp" alt="" width="347" />
+              </a>
+              <a
+                href="/videos/pexels-mikhail-nilov-7989667(1080p).mp4"
+                class="glightbox"
+              >
+                <img src="/images/InstallationVideo2.webp" alt="" width="347" />
+              </a>
+              <a
+                href="/videos/pexels-mikhail-nilov-7989667(1080p).mp4"
+                class="glightbox"
+              >
+                <img src="/images/InstallationVideo3.webp" alt="" width="347" />
+              </a>
+            </div>
+          </div>
+        </div>
+        <div role="tab">
+          <button
+            aria-label="Additional Resources"
+            class="flex h-16 w-full items-center justify-between bg-kl-greige p-7 font-riviera-medium text-xl"
+            @click="accordionTab !== 5 ? accordionTab = 5 : accordionTab = null"
+          >
+            <div>Additional Resources</div>
+            <div>
+              <svg
+                width="19"
+                height="10"
+                class="transition-all duration-500 ease-in-out"
+                x-bind:class="accordionTab === 5 ? 'rotate-180' : '' "
+                viewBox="0 0 19 10"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M0.483398 1L9.2834 9L18.0834 1"
+                  stroke="#252525"
+                  stroke-width="1.33"
+                />
+              </svg>
+            </div>
+          </button>
+          <div
+            x-ref="containerAdditional"
+            x-bind:style="accordionTab == 5 ? 'max-height: ' + $refs.containerAdditional.scrollHeight + 'px' : ''"
+            class="max-h-0 overflow-hidden bg-kl-white transition-all duration-500 ease-in-out"
+          >
+            <div class="flex justify-center gap-5 py-20">
+              <a
+                href="/videos/pexels-mikhail-nilov-7989667(1080p).mp4"
+                class="glightbox"
+              >
+                <img src="/images/InstallationVideo1.webp" alt="" width="347" />
+              </a>
+              <a
+                href="/videos/pexels-mikhail-nilov-7989667(1080p).mp4"
+                class="glightbox"
+              >
+                <img src="/images/InstallationVideo2.webp" alt="" width="347" />
+              </a>
+              <a
+                href="/videos/pexels-mikhail-nilov-7989667(1080p).mp4"
+                class="glightbox"
+              >
+                <img src="/images/InstallationVideo3.webp" alt="" width="347" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQs -->
+    <section class="mt-44 w-full bg-kl-silver pt-28">
+      <div class="mx-auto max-w-[90%] lg:max-w-default">
+        <h3 class="section-heading text-center">Frequently Asked Questions</h3>
+        <div class="flex w-full flex-col pb-36 pt-28" x-data="{faqTab:0}">
+          <div role="tab" class="w-full">
+            <div
+              class="flex h-full max-h-16 w-full cursor-pointer flex-col items-center overflow-hidden border-b-2 border-kl-cooper bg-transparent transition-all duration-500 ease-in-out"
+              @click="faqTab !== 1 ? faqTab  = 1 : faqTab = null"
+              x-bind:style="faqTab === 1 ? 'max-height: ' + ($refs.faq1.scrollHeight + 62) + 'px' : ''"
+            >
+              <div class="flex w-full items-center justify-between">
+                <div class="font-riviera-medium text-lg">
+                  What materials are used in the American Series Horizontal
+                  Cable Railing?
+                </div>
+                <div
+                  class="flex h-9 w-9 items-center justify-center rounded-full bg-kl-cooper"
+                  x-bind:class="faqTab === 1 ? '!bg-kl-black' : ''"
+                >
+                  <div>
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      x-bind:class="faqTab === 1 ? 'hidden' : ''"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path d="M0 8H16" stroke="#FCFCFA" stroke-width="1.33" />
+                      <path
+                        d="M8 16L8 -1.19209e-07"
+                        stroke="#FCFCFA"
+                        stroke-width="1.33"
+                      />
+                    </svg>
+                    <svg
+                      width="16"
+                      height="2"
+                      viewBox="0 0 16 2"
+                      x-bind:class="faqTab === 1 ? '!block' : ''"
+                      class="hidden"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M0 0.700195H16"
+                        stroke="#FCFCFA"
+                        stroke-width="1.33"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <div
+                x-ref="faq1"
+                class="max-w-[870px] self-start overflow-hidden"
+              >
+                <div class="py-14 font-jakarta">
+                  The American Series Horizontal Cable Railing is meticulously
+                  crafted using thick-walled aluminum that ensures both
+                  durability and aesthetic appeal. To enhance your experience
+                  further, we've incorporated vinyl inserts within the railing
+                  system, eliminating any chance of rattling or noise. This
+                  combination of materials not only provides a strong and robust
+                  structure but also adds a touch of elegance to your outdoor or
+                  indoor spaces.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div role="tab" class="mt-5 w-full">
+            <div
+              class="flex h-full max-h-16 w-full cursor-pointer flex-col items-center overflow-hidden border-b-2 border-kl-cooper bg-transparent transition-all duration-500 ease-in-out"
+              @click="faqTab !== 2 ? faqTab  = 2 : faqTab = null"
+              x-bind:style="faqTab === 2 ? 'max-height: ' + ($refs.faq1.scrollHeight + 62) + 'px' : ''"
+            >
+              <div class="flex w-full items-center justify-between">
+                <div class="font-riviera-medium text-lg">
+                  Is the railing easy to install?
+                </div>
+                <div
+                  class="flex h-9 w-9 items-center justify-center rounded-full bg-kl-cooper"
+                  x-bind:class="faqTab === 2 ? '!bg-kl-black' : ''"
+                >
+                  <div>
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      x-bind:class="faqTab === 2 ? 'hidden' : ''"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path d="M0 8H16" stroke="#FCFCFA" stroke-width="1.33" />
+                      <path
+                        d="M8 16L8 -1.19209e-07"
+                        stroke="#FCFCFA"
+                        stroke-width="1.33"
+                      />
+                    </svg>
+                    <svg
+                      width="16"
+                      height="2"
+                      viewBox="0 0 16 2"
+                      x-bind:class="faqTab === 2 ? '!block' : ''"
+                      class="hidden"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M0 0.700195H16"
+                        stroke="#FCFCFA"
+                        stroke-width="1.33"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <div
+                x-ref="faq2"
+                class="max-w-[870px] self-start overflow-hidden"
+              >
+                <div class="py-14 font-jakarta">
+                  The American Series Horizontal Cable Railing is meticulously
+                  crafted using thick-walled aluminum that ensures both
+                  durability and aesthetic appeal. To enhance your experience
+                  further, we've incorporated vinyl inserts within the railing
+                  system, eliminating any chance of rattling or noise. This
+                  combination of materials not only provides a strong and robust
+                  structure but also adds a touch of elegance to your outdoor or
+                  indoor spaces.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div role="tab" class="mt-5 w-full">
+            <div
+              class="flex h-full max-h-16 w-full cursor-pointer flex-col items-center overflow-hidden border-b-2 border-kl-cooper bg-transparent transition-all duration-500 ease-in-out"
+              @click="faqTab !== 3 ? faqTab  = 3 : faqTab = null"
+              x-bind:style="faqTab === 3 ? 'max-height: ' + ($refs.faq1.scrollHeight + 62) + 'px' : ''"
+            >
+              <div class="flex w-full items-center justify-between">
+                <div class="font-riviera-medium text-lg">
+                  Can I customize the color of my railing?
+                </div>
+                <div
+                  class="flex h-9 w-9 items-center justify-center rounded-full bg-kl-cooper"
+                  x-bind:class="faqTab === 3 ? '!bg-kl-black' : ''"
+                >
+                  <div>
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      x-bind:class="faqTab === 3 ? 'hidden' : ''"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path d="M0 8H16" stroke="#FCFCFA" stroke-width="1.33" />
+                      <path
+                        d="M8 16L8 -1.19209e-07"
+                        stroke="#FCFCFA"
+                        stroke-width="1.33"
+                      />
+                    </svg>
+                    <svg
+                      width="16"
+                      height="2"
+                      viewBox="0 0 16 2"
+                      x-bind:class="faqTab === 3 ? '!block' : ''"
+                      class="hidden"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M0 0.700195H16"
+                        stroke="#FCFCFA"
+                        stroke-width="1.33"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <div
+                x-ref="faq3"
+                class="max-w-[870px] self-start overflow-hidden"
+              >
+                <div class="py-14 font-jakarta">
+                  The American Series Horizontal Cable Railing is meticulously
+                  crafted using thick-walled aluminum that ensures both
+                  durability and aesthetic appeal. To enhance your experience
+                  further, we've incorporated vinyl inserts within the railing
+                  system, eliminating any chance of rattling or noise. This
+                  combination of materials not only provides a strong and robust
+                  structure but also adds a touch of elegance to your outdoor or
+                  indoor spaces.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div role="tab" class="mt-5 w-full">
+            <div
+              class="flex h-full max-h-16 w-full cursor-pointer flex-col items-center overflow-hidden border-b-2 border-kl-cooper bg-transparent transition-all duration-500 ease-in-out"
+              @click="faqTab !== 4 ? faqTab  = 4 : faqTab = null"
+              x-bind:style="faqTab === 4 ? 'max-height: ' + ($refs.faq1.scrollHeight + 62) + 'px' : ''"
+            >
+              <div class="flex w-full items-center justify-between">
+                <div class="font-riviera-medium text-lg">
+                  Is this railing system suitable for both horizontal and
+                  vertical infill?
+                </div>
+                <div
+                  class="flex h-9 w-9 items-center justify-center rounded-full bg-kl-cooper"
+                  x-bind:class="faqTab === 4 ? '!bg-kl-black' : ''"
+                >
+                  <div>
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      x-bind:class="faqTab === 4 ? 'hidden' : ''"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path d="M0 8H16" stroke="#FCFCFA" stroke-width="1.33" />
+                      <path
+                        d="M8 16L8 -1.19209e-07"
+                        stroke="#FCFCFA"
+                        stroke-width="1.33"
+                      />
+                    </svg>
+                    <svg
+                      width="16"
+                      height="2"
+                      viewBox="0 0 16 2"
+                      x-bind:class="faqTab === 4 ? '!block' : ''"
+                      class="hidden"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M0 0.700195H16"
+                        stroke="#FCFCFA"
+                        stroke-width="1.33"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <div
+                x-ref="faq4"
+                class="max-w-[870px] self-start overflow-hidden"
+              >
+                <div class="py-14 font-jakarta">
+                  The American Series Horizontal Cable Railing is meticulously
+                  crafted using thick-walled aluminum that ensures both
+                  durability and aesthetic appeal. To enhance your experience
+                  further, we've incorporated vinyl inserts within the railing
+                  system, eliminating any chance of rattling or noise. This
+                  combination of materials not only provides a strong and robust
+                  structure but also adds a touch of elegance to your outdoor or
+                  indoor spaces.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RELATED ARTICLES -->
+    <section class="mx-auto mt-36 max-w-[1180px] px-3 sm:px-4 xl:px-0">
+      <h2 class="section-heading mb-4">Related Articles</h2>
+      <p class="section-description text-xl">
+        Stay updated with industry trends, product highlights, and project
+        inspiration <br />
+        by exploring our blog articles.
+      </p>
+      <div
+        class="mt-20 flex flex-col items-start justify-between gap-2 md:flex-row"
+      >
+        <a href="#">
+          <div
+            class="duration-400 flex w-full flex-col border-b-8 border-b-kl-olive transition-all ease-in-out hover:-translate-y-1 sm:w-full lg:w-[380px] lg:min-w-[380px]"
+          >
+            <img
+              class="object-cover"
+              src="/images/DeckSupport.webp"
+              alt="blog"
+            />
+            <div
+              class="flex h-[200px] flex-col justify-between bg-[#EEE4DB] px-4 sm:px-9"
+            >
+              <h2 class="blog-title py-4 sm:pb-7 sm:pt-7">
+                4 Ways to Handle Your Deck’s Support Posts
+              </h2>
+
+              <a
+                href="#"
+                class="font-RivieraNightsMedium group mb-[21px] flex items-center space-x-2 text-base leading-[120%] text-black transition-all duration-300 ease-in-out"
+                >continue reading
+
+                <svg
+                  class="transition-all duration-300 ease-in-out group-hover:translate-x-1"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 1024 1024"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M340.864 149.312C335.282 155.027 332.157 162.699 332.157 170.688C332.157 178.677 335.282 186.349 340.864 192.064L652.736 512L340.864 831.872C335.282 837.587 332.157 845.259 332.157 853.248C332.157 861.237 335.282 868.909 340.864 874.624C343.577 877.411 346.822 879.626 350.405 881.138C353.988 882.651 357.839 883.43 361.728 883.43C365.618 883.43 369.468 882.651 373.051 881.138C376.635 879.626 379.879 877.411 382.592 874.624L714.24 534.336C720.065 528.36 723.325 520.345 723.325 512C723.325 503.655 720.065 495.64 714.24 489.664L382.592 149.376C379.879 146.589 376.635 144.374 373.051 142.862C369.468 141.35 365.618 140.57 361.728 140.57C357.839 140.57 353.988 141.35 350.405 142.862C346.822 144.374 343.577 146.589 340.864 149.376V149.312Z"
+                    fill="black"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </a>
+        <a href="#">
+          <div
+            class="duration-400 flex w-full flex-col border-b-8 border-b-kl-purple transition-all ease-in-out hover:-translate-y-1 sm:w-full lg:w-[380px] lg:min-w-[380px]"
+          >
+            <img
+              class="object-cover"
+              src="/images/RellingSystem.webp"
+              alt="blog"
+            />
+            <div
+              class="flex h-[201px] flex-col justify-between bg-[#EEE4DB] px-4 sm:px-9"
+            >
+              <h2 class="blog-title py-4 sm:pb-7 sm:pt-7">
+                3 Ways to Minimize the Posts in Your Railing System
+              </h2>
+              <a
+                href="#"
+                class="font-RivieraNightsMedium group mb-[21px] flex items-center space-x-2 text-base leading-[120%] text-black transition-all duration-300 ease-in-out"
+                >continue reading
+
+                <svg
+                  class="transition-all duration-300 ease-in-out group-hover:translate-x-1"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 1024 1024"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M340.864 149.312C335.282 155.027 332.157 162.699 332.157 170.688C332.157 178.677 335.282 186.349 340.864 192.064L652.736 512L340.864 831.872C335.282 837.587 332.157 845.259 332.157 853.248C332.157 861.237 335.282 868.909 340.864 874.624C343.577 877.411 346.822 879.626 350.405 881.138C353.988 882.651 357.839 883.43 361.728 883.43C365.618 883.43 369.468 882.651 373.051 881.138C376.635 879.626 379.879 877.411 382.592 874.624L714.24 534.336C720.065 528.36 723.325 520.345 723.325 512C723.325 503.655 720.065 495.64 714.24 489.664L382.592 149.376C379.879 146.589 376.635 144.374 373.051 142.862C369.468 141.35 365.618 140.57 361.728 140.57C357.839 140.57 353.988 141.35 350.405 142.862C346.822 144.374 343.577 146.589 340.864 149.376V149.312Z"
+                    fill="black"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </a>
+        <a href="#">
+          <div
+            class="duration-400 flex w-full flex-col border-b-8 border-b-kl-cooper transition-all ease-in-out hover:-translate-y-1 sm:w-full lg:w-[380px] lg:min-w-[380px]"
+          >
+            <img class="object-cover" src="/images/DeckIssue.webp" alt="blog" />
+            <div
+              class="flex h-[200px] flex-col justify-between bg-[#EEE4DB] px-4 sm:px-9"
+            >
+              <h2 class="blog-title py-4 sm:pb-7 sm:pt-7">
+                7 Safety Issues to Check on Your Deck
+              </h2>
+              <a
+                href="#"
+                class="font-RivieraNightsMedium group mb-[21px] flex items-center space-x-2 text-base leading-[120%] text-black transition-all duration-300 ease-in-out"
+                >continue reading
+
+                <svg
+                  class="transition-all duration-300 ease-in-out group-hover:translate-x-1"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 1024 1024"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M340.864 149.312C335.282 155.027 332.157 162.699 332.157 170.688C332.157 178.677 335.282 186.349 340.864 192.064L652.736 512L340.864 831.872C335.282 837.587 332.157 845.259 332.157 853.248C332.157 861.237 335.282 868.909 340.864 874.624C343.577 877.411 346.822 879.626 350.405 881.138C353.988 882.651 357.839 883.43 361.728 883.43C365.618 883.43 369.468 882.651 373.051 881.138C376.635 879.626 379.879 877.411 382.592 874.624L714.24 534.336C720.065 528.36 723.325 520.345 723.325 512C723.325 503.655 720.065 495.64 714.24 489.664L382.592 149.376C379.879 146.589 376.635 144.374 373.051 142.862C369.468 141.35 365.618 140.57 361.728 140.57C357.839 140.57 353.988 141.35 350.405 142.862C346.822 144.374 343.577 146.589 340.864 149.376V149.312Z"
+                    fill="black"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="mt-8 flex justify-center md:mt-[76px]">
+        <button
+          aria-label="View all articles"
+          class="secondary-btn border border-[#252525] transition-all duration-500 ease-in-out hover:bg-transparent hover:text-black"
+        >
+          View All Articles
+        </button>
+      </div>
+    </section>
+
+    <!-- NEXT STEP SECTION -->
+    <section class="mx-auto mt-24 lg:mt-48">
+      <div class="flex flex-col justify-between lg:h-[400px] lg:flex-row">
+        <div
+          class="lg:full h-[400px] w-full bg-[url('/images/Nextstep.webp')] bg-cover bg-no-repeat lg:w-[56%]"
+        >
+          <!-- <img src="/images/Nextstep.webp" alt="next-step" /> -->
+        </div>
+        <div
+          class="flex w-full flex-col justify-center bg-kl-purple p-10 lg:w-[44%] lg:items-start xl:pl-[91px]"
+        >
+          <h2 class="font-riviera-medium text-4xl text-kl-white">
+            Ready for the Next Step?
+          </h2>
+          <p class="py-5 font-jakarta text-lg font-normal text-kl-white">
+            Find a nearby dealer to kickstart your outdoor <br />transformation.
+          </p>
+          <button
+            aria-label="Locate a Dealer"
+            class="borderkl-greige mt-2 border bg-transparent px-8 py-4 font-jakarta text-base text-white transition-all duration-300 ease-in-out hover:bg-kl-greige hover:text-black sm:mt-6 md:py-4"
+          >
+            Locate a Dealer
+          </button>
+        </div>
+      </div>
+    </section>
 
     <!-- BACK TO TOP -->
     <div
@@ -1152,79 +1903,79 @@
           >
             <path
               d="M26.0973 25.6642L21.3327 12.0741L16.568 25.6642H26.0973ZM28.9128 33.7316H13.7525L11.3161 40.8245H0L15.5393 0H27.1261L42.6654 40.8245H31.3493L28.9128 33.7316Z"
-              fill="#252525"
+              fill="#fff"
             />
             <path
               d="M57.9208 18.7338H61.4402C65.3385 18.7338 67.2877 17.0373 67.2877 13.6442C67.2877 10.2512 65.3385 8.55473 61.4402 8.55473H57.9208V18.7338ZM57.9208 40.8245H47.3086V0H64.2015C68.7857 0 72.287 1.19116 74.7054 3.57349C77.1599 5.95582 78.3872 9.31274 78.3872 13.6442C78.3872 17.9758 77.1599 21.3327 74.7054 23.715C72.287 26.0973 68.7857 27.2885 64.2015 27.2885H57.9208V40.8245Z"
-              fill="#252525"
+              fill="#fff"
             />
             <path
               d="M107.231 8.98788H94.616V15.81H106.528V24.7979H94.616V31.8366H107.231V40.8245H84.0038V0H107.231V8.98788Z"
-              fill="#252525"
+              fill="#fff"
             />
             <path
               d="M126.578 19.0586L113.854 0H126.957L132.479 10.5581L139.302 0H152.404L138.923 19.0586L154.137 40.8245H141.197L133.021 27.5051L123.437 40.8245H110.605L126.578 19.0586Z"
-              fill="#252525"
+              fill="#fff"
             />
             <path
               d="M1.40796 59.1293V47.0166H8.88692V48.236H2.70865V52.447H8.39916V53.6664H2.70865V59.1293H1.40796Z"
-              fill="#252525"
+              fill="#fff"
             />
             <path
               d="M10.8551 59.1293V47.0166H18.6592V48.236H12.1558V52.447H18.3341V53.6664H12.1558V57.9099H18.6592V59.1293H10.8551Z"
-              fill="#252525"
+              fill="#fff"
             />
             <path
               d="M20.8103 59.1293V47.0166H21.9484L29.0534 57.2108H28.6144V47.0166H29.9151V59.1293H28.777L21.672 48.8701H22.111V59.1293H20.8103Z"
-              fill="#252525"
+              fill="#fff"
             />
             <path
               d="M38.3099 59.3244C37.4536 59.3244 36.6678 59.1727 35.9524 58.8692C35.237 58.5548 34.6138 58.1213 34.0827 57.5685C33.5624 57.0048 33.1559 56.3437 32.8633 55.5849C32.5706 54.8262 32.4243 53.9916 32.4243 53.0811C32.4243 52.1706 32.5706 51.336 32.8633 50.5773C33.1559 49.8185 33.5624 49.1574 34.0827 48.5937C34.6138 48.0301 35.237 47.5965 35.9524 47.293C36.6678 46.9787 37.4536 46.8215 38.3099 46.8215C39.1337 46.8215 39.8707 46.9679 40.5211 47.2605C41.1823 47.5532 41.735 47.9325 42.1794 48.3986C42.6347 48.8539 42.9599 49.3362 43.155 49.8456L41.9356 50.3822C41.6321 49.6776 41.166 49.114 40.5373 48.6913C39.9195 48.2577 39.177 48.0409 38.3099 48.0409C37.4211 48.0409 36.6298 48.2523 35.9361 48.675C35.2424 49.0977 34.5005 49.6885 34.3103 50.4472C33.9201 51.1951 33.725 52.0731 33.725 53.0811C33.725 54.0783 33.9201 54.9563 34.3103 55.715C34.5005 56.4737 35.2424 57.0645 35.9361 57.4872C36.6298 57.8991 37.4211 58.105 38.3099 58.105C39.177 58.105 39.9195 57.8936 40.5373 57.4709C41.166 57.0482 41.6321 56.4846 41.9356 55.78L43.155 56.3166C42.9599 56.8152 42.6347 57.2975 42.1794 57.7636C41.735 58.2188 41.1823 58.5928 40.5211 58.8854C39.8707 59.1781 39.1337 59.3244 38.3099 59.3244Z"
-              fill="#252525"
+              fill="#fff"
             />
             <path
               d="M45.484 59.1293V47.0166H46.7847V59.1293H45.484Z"
-              fill="#252525"
+              fill="#fff"
             />
             <path
               d="M49.6439 59.1293V47.0166H50.782L57.887 57.2108H57.4481V47.0166H58.7487V59.1293H57.6106L50.5056 48.8701H50.9446V59.1293H49.6439Z"
-              fill="#252525"
+              fill="#fff"
             />
             <path
               d="M67.1435 59.3244C66.2872 59.3244 65.5014 59.1727 64.786 58.8692C64.0706 58.5548 63.4474 58.1213 62.9163 57.5685C62.396 57.0048 61.9895 56.3437 61.6969 55.5849C61.4042 54.8262 61.2579 53.9916 61.2579 53.0811C61.2579 52.1706 61.4042 51.336 61.6969 50.5773C61.9895 49.8185 62.396 49.1574 62.9163 48.5937C63.4474 48.0301 64.0706 47.5965 64.786 47.293C65.5014 46.9787 66.2872 46.8215 67.1435 46.8215C67.9673 46.8215 68.7043 46.9679 69.3547 47.2605C70.0159 47.5532 70.5687 47.9325 71.0131 48.3986C71.4683 48.8539 71.7935 49.3362 71.9886 49.8456L70.818 50.4147C70.5145 49.6776 70.0484 49.0977 69.4197 48.675C68.7911 48.2523 68.0323 48.0409 67.1435 48.0409C66.2547 48.0409 65.4635 48.2523 64.7698 48.675C64.0761 49.0977 63.5341 49.6885 63.1439 50.4472C62.7537 51.1951 62.5586 52.0731 62.5586 53.0811C62.5586 54.0783 62.7537 54.9563 63.1439 55.715C63.5341 56.4737 64.0761 57.0645 64.7698 57.4872C65.4635 57.8991 66.2547 58.105 67.1435 58.105C67.9348 58.105 68.6447 57.9316 69.2734 57.5847C69.9129 57.2379 70.4169 56.7664 70.7854 56.1702C71.154 55.5632 71.3382 54.8695 71.3382 54.0891V53.4225L71.9235 54.0078H67.1435V52.8697H72.6389V53.8778C72.6389 54.669 72.498 55.4007 72.2162 56.0727C71.9344 56.7339 71.5442 57.3083 71.0456 57.7961C70.547 58.2838 69.9617 58.6632 69.2896 58.9342C68.6285 59.1943 67.9131 59.3244 67.1435 59.3244Z"
-              fill="#252525"
+              fill="#fff"
             />
             <path
               d="M80.5928 59.3244C79.9425 59.3244 79.3626 59.1997 78.8531 58.9504C78.3437 58.7012 77.9427 58.3489 77.65 57.8936C77.3573 57.4384 77.211 56.9073 77.211 56.3003C77.211 55.78 77.3086 55.3194 77.5037 54.9183C77.6988 54.5173 77.9372 54.1704 78.2191 53.8778C78.5117 53.5743 78.8044 53.3196 79.097 53.1136C79.4005 52.9077 79.6552 52.7397 79.8612 52.6096L80.7066 52.0893C81.0101 51.9051 81.3082 51.6991 81.6008 51.4715C81.9043 51.233 82.1536 50.9621 82.3487 50.6586C82.5547 50.3442 82.6576 49.9974 82.6576 49.618C82.6576 49.1628 82.5059 48.7834 82.2024 48.4799C81.8989 48.1764 81.5195 48.0247 81.0643 48.0247C80.5982 48.0247 80.2134 48.1764 79.91 48.4799C79.6173 48.7834 79.471 49.1682 79.471 49.6343C79.471 49.9378 79.5414 50.2358 79.6823 50.5285C79.8341 50.8211 80.0183 51.103 80.2351 51.3739C80.4627 51.6341 80.6958 51.8888 80.9342 52.1381L87.6003 59.1293H85.8606L79.91 52.9835C79.6498 52.7126 79.3842 52.4145 79.1133 52.0893C78.8531 51.7533 78.6309 51.3902 78.4467 51C78.2624 50.5989 78.1703 50.16 78.1703 49.683C78.1703 49.1194 78.3003 48.6262 78.5605 48.2035C78.8206 47.77 79.1675 47.4339 79.601 47.1955C80.0454 46.9462 80.5332 46.8215 81.0643 46.8215C81.5846 46.8215 82.0615 46.9408 82.4951 47.1792C82.9286 47.4177 83.2755 47.7483 83.5356 48.171C83.7958 48.5937 83.9258 49.0761 83.9258 49.618C83.9258 50.1925 83.7903 50.6965 83.5194 51.1301C83.2592 51.5528 82.9395 51.9159 82.5601 52.2194C82.1807 52.5229 81.8285 52.7776 81.5033 52.9835L80.6904 53.4876C80.3977 53.6718 80.0888 53.894 79.7636 54.1542C79.4384 54.4035 79.1621 54.7015 78.9344 55.0484C78.7068 55.3844 78.593 55.7909 78.593 56.2678C78.593 56.8531 78.7827 57.3083 79.162 57.6335C79.5414 57.9587 80.0292 58.1213 80.6253 58.1213C81.0155 58.1213 81.3624 58.0562 81.6659 57.9262C81.9694 57.7961 82.2403 57.6281 82.4788 57.4221C82.7173 57.2054 82.934 56.9669 83.1292 56.7068C83.3243 56.4358 83.5085 56.1702 83.6819 55.9101L85.5517 53.1299H87.0312L84.8526 56.4466C84.6791 56.7176 84.4678 57.0211 84.2185 57.3571C83.9692 57.6823 83.6765 57.9966 83.3405 58.3001C83.0045 58.5928 82.6089 58.8366 82.1536 59.0317C81.7092 59.2268 81.1889 59.3244 80.5928 59.3244Z"
-              fill="#252525"
+              fill="#fff"
             />
             <path
               d="M92.4339 59.1293V47.0166H96.5961C97.3873 47.0166 98.0811 47.1738 98.6772 47.4881C99.2733 47.7916 99.734 48.2252 100.059 48.7888C100.395 49.3416 100.563 49.9865 100.563 50.7236C100.563 51.5799 100.336 52.3115 99.8803 52.9185C99.4359 53.5255 98.8289 53.9536 98.0594 54.2029L100.888 59.1293H99.3601L96.401 53.9103L97.279 54.4143H93.7346V59.1293H92.4339ZM93.7346 53.1949H96.6611C97.1814 53.1949 97.6367 53.0974 98.0269 52.9022C98.4171 52.6963 98.7206 52.4091 98.9373 52.0405C99.1541 51.6612 99.2625 51.2168 99.2625 50.7073C99.2625 50.1979 99.1541 49.7589 98.9373 49.3904C98.7206 49.0219 98.4171 48.74 98.0269 48.5449C97.6367 48.339 97.1814 48.236 96.6611 48.236H93.7346V53.1949Z"
-              fill="#252525"
+              fill="#fff"
             />
             <path
               d="M101.598 59.1293L106.02 47.0166H107.418L111.841 59.1293H110.475L109.434 56.1702H104.02L102.963 59.1293H101.598ZM104.443 54.9508H108.979L106.524 47.9922H106.914L104.443 54.9508Z"
-              fill="#252525"
+              fill="#fff"
             />
             <path
               d="M113.456 59.1293V47.0166H114.756V59.1293H113.456Z"
-              fill="#252525"
+              fill="#fff"
             />
             <path
               d="M117.616 59.1293V47.0166H118.916V57.9099H124.282V59.1293H117.616Z"
-              fill="#252525"
+              fill="#fff"
             />
             <path
               d="M126.253 59.1293V47.0166H127.554V59.1293H126.253Z"
-              fill="#252525"
+              fill="#fff"
             />
             <path
               d="M130.413 59.1293V47.0166H131.551L138.656 57.2108H138.217V47.0166H139.518V59.1293H138.38L131.275 48.8701H131.714V59.1293H130.413Z"
-              fill="#252525"
+              fill="#fff"
             />
             <path
               d="M147.913 59.3244C147.056 59.3244 146.27 59.1727 145.555 58.8692C144.84 58.5548 144.216 58.1213 143.685 57.5685C143.165 57.0048 142.759 56.3437 142.466 55.5849C142.173 54.8262 142.027 53.9916 142.027 53.0811C142.027 52.1706 142.173 51.336 142.466 50.5773C142.759 49.8185 143.165 49.1574 143.685 48.5937C144.216 48.0301 144.84 47.5965 145.555 47.293C146.27 46.9787 147.056 46.8215 147.913 46.8215C148.736 46.8215 149.473 46.9679 150.124 47.2605C150.785 47.5532 151.338 47.9325 151.782 48.3986C152.237 48.8539 152.563 49.3362 152.758 49.8456L151.587 50.4147C151.283 49.6776 150.817 49.0977 150.189 48.675C149.56 48.2523 148.801 48.0409 147.913 48.0409C147.024 48.0409 146.232 48.2523 145.539 48.675C144.845 49.0977 144.303 49.6885 143.913 50.4472C143.523 51.1951 143.328 52.0731 143.328 53.0811C143.328 54.0783 143.523 54.9563 143.913 55.715C144.303 56.4737 144.845 57.0645 145.539 57.4872C146.232 57.8991 147.024 58.105 147.913 58.105C148.704 58.105 149.414 57.9316 150.042 57.5847C150.682 57.2379 151.186 56.7664 151.554 56.1702C151.923 55.5632 152.107 54.8695 152.107 54.0891V53.4225L152.693 54.0078H147.913V52.8697H153.408V53.8778C153.408 54.669 153.267 55.4007 152.985 56.0727C152.703 56.7339 152.313 57.3083 151.815 57.7961C151.316 58.2838 150.731 58.6632 150.059 58.9342C149.398 59.1943 148.682 59.3244 147.913 59.3244Z"
-              fill="#252525"
+              fill="#fff"
             />
           </svg>
           <svg
@@ -1276,9 +2027,7 @@
     ></div>
 
     <!-- FOOTER -->
-    <footer
-      class="mt-16 bg-kl-greige px-3 pb-[42px] pt-[30px] sm:mt-20 sm:px-4 sm:pt-[97px] lg:mt-[100px]"
-    >
+    <footer class="bg-kl-greige px-3 pb-[42px] pt-[30px] sm:px-4 sm:pt-[97px]">
       <div class="mx-auto max-w-default">
         <div
           class="flex flex-col items-start justify-between gap-5 sm:flex-row sm:items-center"

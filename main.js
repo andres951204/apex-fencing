@@ -1,8 +1,15 @@
 import Swiper from "swiper";
 import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
+import Alpine from "alpinejs";
+import intersect from "@alpinejs/intersect";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+
+window.Alpine = Alpine;
+
+Alpine.plugin(intersect);
+Alpine.start();
 
 // SWIPER
 new Swiper(".reviews-swiper", {
@@ -116,6 +123,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const productNav = document.getElementById("review-slider");
 
   function setLeftMargin() {
+    if (!navbarContainer) return;
     const leftMargin = navbarContainer.getBoundingClientRect().left;
     console.log(leftMargin);
     productNav.style.marginLeft = `${leftMargin}px`;

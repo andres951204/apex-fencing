@@ -182,6 +182,16 @@
   background-color: lightgray;
 }
 
+.sticky-navbar {
+  position: sticky !important;
+  top: 0 !important;
+  margin-top: 0 !important;
+}
+
+.navbarOffsetMargin {
+  padding-top: 45px;
+}
+
 @media (min-width: 769px) {
   .swiper-slide:first-child {
     transition: transform 100ms;
@@ -207,5 +217,11 @@
 
   .swiper[dir="rtl"] .swiper-slide.swiper-slide-next:nth-child(2) {
     transform: translateX(-55%);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
   }
 }

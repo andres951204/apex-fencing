@@ -1,5 +1,5 @@
 import Swiper from "swiper";
-import { Navigation, Pagination } from "swiper/modules";
+import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -24,6 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const targetContainer = document.getElementById("lighting-container");
 
   function setLeftMargin() {
+    if (window.innerWidth <= 1024) return;
     const leftMargin = guideContainer.getBoundingClientRect().left;
     targetContainer.style.marginLeft = `${leftMargin}px`;
   }
@@ -31,3 +32,15 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("resize", setLeftMargin);
   setLeftMargin(); // Initial call
 });
+
+const productNavbar = document.getElementById("productNavigation");
+
+function stickyNavbar() {
+  if (window.scrollY >= productNavbar.offsetTop) {
+    productNavbar.classList.add("sticky-navbar");
+  } else {
+    productNavbar.classList.remove("sticky-navbar");
+  }
+}
+
+document.addEventListener("scroll", stickyNavbar);
